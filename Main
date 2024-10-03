@@ -1,0 +1,37 @@
+package unique;
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+		String input;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a one word string");
+		input = scan.nextLine();
+		System.out.println(alluniqueChar(input));
+	}
+	public static boolean alluniqueChar(String input) {
+		//algorithm
+		//pick the first char and compare it with all the other char
+		//if match, return false, because you find a duplicate
+		//otherwise, compare the second char with all the other char
+		//repeat until you scan all char
+		//if nothing matches, return true, because all are unique
+		char u[] = new char[input.length()];
+		u = input.toCharArray();
+		//input = abcd
+		for(int i = 0; i < input.length(); i++) {
+			//u[i]:a
+			for(int j = i+1; j < input.length(); j++) {
+				//compare u[i] with u[j]
+				if(u[i]==u[j]) {
+					return false;
+				}
+			}
+		}
+		return true;
+		
+		}
+		
+	}
+	
+
